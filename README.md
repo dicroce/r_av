@@ -1,5 +1,7 @@
 # r_av
 
+r_av is a C++ library that wraps some of the functionality of FFmpeg. There are enough classes here to do a full video transcode + recontainerization. If it doesn't do something you need I will always consider good PR's :)
+
 A complete transcoding example involves reading frames from r_demuxer, decoding them with r_video_decoder, re-encoing them with r_encoder and finally writing them to a new file with r_muxer.
 
 ```
