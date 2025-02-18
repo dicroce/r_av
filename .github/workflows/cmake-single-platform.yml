@@ -22,8 +22,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-apt install libswscale-dev libavdevice-dev libavformat-dev libavcodec-dev libavutil-dev
-
     - name: Install package
       run: |
         sudo apt-get -y install uuid-dev
