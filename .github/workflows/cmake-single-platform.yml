@@ -22,19 +22,16 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+apt install libswscale-dev libavdevice-dev libavformat-dev libavcodec-dev libavutil-dev
+
     - name: Install package
       run: |
         sudo apt-get -y install uuid-dev
-        sudo apt-get -y install libavcodec-dev
-        sudo apt-get -y install libavcodec58
+        sudo apt-get -y install libswscale-dev
         sudo apt-get -y install libavdevice-dev
-        sudo apt-get -y install libavdevice58
-        sudo apt-get -y install libavfilter-dev
-        sudo apt-get -y install libavfilter7
         sudo apt-get -y install libavformat-dev
-        sudo apt-get -y install libavformat58
+        sudo apt-get -y install libavcodec-dev
         sudo apt-get -y install libavutil-dev
-        sudo apt-get -y install libavutil56
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
