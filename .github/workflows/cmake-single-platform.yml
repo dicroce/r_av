@@ -24,6 +24,7 @@ jobs:
 
     - name: Install package
       run: |
+        sudo apt-get -y install uuid-dev
         sudo apt-get -y install libavcodec-dev
         sudo apt-get -y install libavcodec58
         sudo apt-get -y install libavdevice-dev
