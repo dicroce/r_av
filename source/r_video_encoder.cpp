@@ -202,8 +202,9 @@ void r_video_encoder::_clear()
 {
     if(_context)
     {
-        avcodec_close(_context);
-        av_free(_context);
+        //avcodec_close(_context);
+        avcodec_free_context(&_context);
+        //av_free(_context);
         _context = nullptr;
     }
 

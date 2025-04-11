@@ -123,7 +123,7 @@ struct r_stream_info r_demuxer::get_stream_info(int stream_index) const
     else
     {
         si.bits_per_raw_sample = stream->codecpar->bits_per_raw_sample;
-        si.channels = stream->codecpar->channels;
+        si.channels = stream->codecpar->ch_layout.nb_channels;
         si.sample_rate = stream->codecpar->sample_rate;
     }
 
