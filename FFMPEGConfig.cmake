@@ -1,7 +1,7 @@
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-    set(FFMPEG_INCLUDE_DIRS "$ENV{FFMPEG_INCLUDE_DIRS}")
-    set(FFMPEG_LIB_DIRS "$ENV{FFMPEG_LIB_DIRS}")
+    set(FFMPEG_INCLUDE_DIRS "$ENV{FFMPEG_TOP_DIR}/include")
+    set(FFMPEG_LIB_DIRS "$ENV{FFMPEG_TOP_DIR}/lib")
     set(FFMPEG_LIBS swscale.lib avdevice.lib avformat.lib avcodec.lib avutil.lib)
 endif()
 
