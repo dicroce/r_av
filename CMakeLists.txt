@@ -1,5 +1,4 @@
-
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.28.3)
 set(PROJECT_VERSION_MAJOR 0)
 set(PROJECT_VERSION_MINOR 0)
 set(PROJECT_VERSION_PATCH 1)
@@ -52,4 +51,6 @@ target_link_libraries(
 
 add_subdirectory(ut)
 
-configure_dev_package("r_av" "A C++ wrapper for ffmpeg.")
+if(PROJECT_IS_TOP_LEVEL)
+    configure_dev_package("r_av" "A C++ wrapper for ffmpeg.")
+endif()
