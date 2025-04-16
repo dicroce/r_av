@@ -1,17 +1,17 @@
-if(NOT TARGET FFmpeg::ffmpeg)
+if(NOT TARGET ffmpeg)
 
     if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-        add_library(FFmpeg::ffmpeg INTERFACE IMPORTED GLOBAL)
+        add_library(ffmpeg INTERFACE IMPORTED GLOBAL)
 
-        target_include_directories(FFmpeg::ffmpeg INTERFACE
+        target_include_directories(ffmpeg INTERFACE
             "$ENV{FFMPEG_TOP_DIR}/include"
         )
 
-        target_link_directories(FFmpeg::ffmpeg INTERFACE
+        target_link_directories(ffmpeg INTERFACE
             "$ENV{FFMPEG_TOP_DIR}/lib"
         )
 
-        target_link_libraries(FFmpeg::ffmpeg INTERFACE
+        target_link_libraries(ffmpeg INTERFACE
             swscale.lib
             avdevice.lib
             avformat.lib
@@ -19,7 +19,7 @@ if(NOT TARGET FFmpeg::ffmpeg)
             avutil.lib
         )
 
-        set(FFMPEG_LIBS FFmpeg::ffmpeg)
+        set(FFMPEG_LIBS ffmpeg)
     endif()
 
     if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
@@ -31,9 +31,9 @@ if(NOT TARGET FFmpeg::ffmpeg)
         pkg_search_module(AVCODEC REQUIRED libavcodec)
         pkg_search_module(AVUTIL REQUIRED libavutil)
 
-        add_library(FFmpeg::ffmpeg INTERFACE IMPORTED GLOBAL)
+        add_library(ffmpeg INTERFACE IMPORTED GLOBAL)
 
-        target_include_directories(FFmpeg::ffmpeg INTERFACE
+        target_include_directories(ffmpeg INTERFACE
             ${SWSCALE_INCLUDE_DIRS}
             ${AVDEVICE_INCLUDE_DIRS}
             ${AVFORMAT_INCLUDE_DIRS}
@@ -41,7 +41,7 @@ if(NOT TARGET FFmpeg::ffmpeg)
             ${AVUTIL_INCLUDE_DIRS}
         )
 
-        target_link_directories(FFmpeg::ffmpeg INTERFACE
+        target_link_directories(ffmpeg INTERFACE
             ${SWSCALE_LIBRARY_DIRS}
             ${AVDEVICE_LIBRARY_DIRS}
             ${AVFORMAT_LIBRARY_DIRS}
@@ -49,7 +49,7 @@ if(NOT TARGET FFmpeg::ffmpeg)
             ${AVUTIL_LIBRARY_DIRS}
         )
 
-        target_link_libraries(FFmpeg::ffmpeg INTERFACE
+        target_link_libraries(ffmpeg INTERFACE
             ${SWSCALE_LIBRARIES}
             ${AVDEVICE_LIBRARIES}
             ${AVFORMAT_LIBRARIES}
@@ -57,6 +57,6 @@ if(NOT TARGET FFmpeg::ffmpeg)
             ${AVUTIL_LIBRARIES}
         )
 
-        set(FFMPEG_LIBS FFmpeg::ffmpeg)
+        set(FFMPEG_LIBS ffmpeg)
     endif()
 endif()
